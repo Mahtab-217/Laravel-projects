@@ -13,3 +13,5 @@ Route::get("product/update/{id}", [ProductsController::class, 'update']);
 Route::get("product/delete/{id}", [ProductsController::class, 'delete']);
 Route::get("addData",[StudentsController::class, 'addData']);
 Route::get("fetchData",[StudentsController::class, 'fetchData']);
+Route::get("update", [StudentsController::class,'update']);
+Route::get("delete", [StudentsController::class,'delete']);

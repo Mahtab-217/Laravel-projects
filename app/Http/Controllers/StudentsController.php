@@ -7,40 +7,18 @@ use Illuminate\Http\Request;
 class StudentsController extends Controller
 {
     //
-    public function addData(){
-     Db::table("students")->insert([
-        [
-            "name"=>"Sima",
-            "lastName"=>"Qurbani",
-             "gender"=>"f",
-             "age"=>"27"
-        ],
-
-          [
-            "name"=>"Mahtab",
-            "lastName"=>"Nasiri",
-             "gender"=>"f",
-             "age"=>"18"
-        ], 
-
-         [
-            "name"=>"Murtaza",
-            "lastName"=>"Sharifi",
-             "gender"=>"m",
-             "age"=>"13"
-        ],  
-        
-        [
-            "name"=>"Mustafa",
-            "lastName"=>"Nasiri",
-             "gender"=>"m",
-             "age"=>"8"
-        ],
-     ]);
-        return "Data inserted successfully";
-    }
     public function fetchData(){
-          $allStudents =  DB::table("students")->get();
-          return $allStudents;
+    //  $oneStudent=   DB::table("students")->where("name","Ali");
+    //  return $oneStudent;
+   $sortedStudents= DB::table("students")->orderBy("score", "desc")->get();
+     return $sortedStudents;
+    }
+    public function update(){
+        DB::table("students")->where("score","<", 50)->update(["lastName"=>"Failed Ones"]);
+        return "Data was updated successfully";
+    }
+    public function delete(){
+        DB::table("students")->where("score","<",10)->delete();
+        return "افراد شکست خورده ها حذف شد";
     }
 }
