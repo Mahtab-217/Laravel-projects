@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Students;
 use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ProductsController;
