@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Students;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,6 +22,8 @@ class StudentsFactory extends Factory
             "name"=>$this->faker->name(),
             "lastName"=>$this->faker->lastName(),
             "score"=>$this->faker->numberBetween(5,100),
+            "age"=>$this->faker->numberBetween(10,80),
+           
 
         ];
     }
