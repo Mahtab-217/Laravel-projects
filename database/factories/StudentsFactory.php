@@ -23,7 +23,8 @@ class StudentsFactory extends Factory
             "lastName"=>$this->faker->lastName(),
             "score"=>$this->faker->numberBetween(5,100),
             "age"=>$this->faker->numberBetween(10,80),
-           
+           "gender"=>$this->faker->randomElement(["m","f"]),
+
 
         ];
     }
