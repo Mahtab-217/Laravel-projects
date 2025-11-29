@@ -39,4 +39,16 @@ return $students;
             $f =Students::female()->where("age",">",40)->get();
             return $f;
       }
+      public function delete(){
+            Students::findorFail(1)->delete();
+            return "one item was deleted";
+      }
+      public function showDeletedData(){
+           $students= Students::onlyTrashed()->get();
+            return $students;
+      }
+      public function restoreData(){
+            Students::withTrashed()->findorFail(1)->restore();
+            return "Item was restored";
+      }
 }

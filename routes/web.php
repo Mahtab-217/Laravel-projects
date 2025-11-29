@@ -22,3 +22,5 @@ Route::get("second",[StudentsController::class,'second']);
 Route::get("l",[StudentsController::class,'little']);
 Route::get("y",[StudentsController::class,'young']);
 Route::get("o",[StudentsController::class,'old']);
+Route::get("showDeletedData",[StudentsController::class,'showDeletedData']);
+Route::get("restoreData",[StudentsController::class,'restoreData']);
