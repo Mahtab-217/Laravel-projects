@@ -8,7 +8,7 @@ class StudentsController extends Controller
 {
     //
     public function fetchData(){
-   $students= Students::male()->get();
+   $students= Students::all();
 return $students;
 
 
