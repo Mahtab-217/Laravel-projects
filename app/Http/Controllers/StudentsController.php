@@ -13,9 +13,9 @@ return $students;
 
 
       //  $students = Students::whereAny(["age", "score"],">",95)->get();->orWhere("name","LIKE","%B%")
-//      $students =Students::where("score",">",80)->Where("age",">",70)->orWhere("id",[10])->get();
-//        $students = Students::where("name","LIKE","%tt%")->get();
-//      return $students;
+     $students =Students::where("score",">",80)->Where("age",">",70)->orWhere("id",[10])->get();
+       $students = Students::where("name","LIKE","%tt%")->get();
+     return $students;
     }
      public function first(){
    $students= Students::male()->get();
