@@ -24,3 +24,4 @@ Route::get("y",[StudentsController::class,'young']);
 Route::get("o",[StudentsController::class,'old']);
 Route::get("showDeletedData",[StudentsController::class,'showDeletedData']);
 Route::get("restoreData",[StudentsController::class,'restoreData']);
+Route::get("new",[StudentsController::class,'putData']);

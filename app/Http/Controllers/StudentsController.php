@@ -17,6 +17,10 @@ return $students;
        $students = Students::where("name","LIKE","%tt%")->get();
      return $students;
     }
+    public function putData(){
+      $newStudents=Students::where("score",">",80)->where("age","<",20)->get();
+      return $newStudents;
+    }
      public function first(){
    $students= Students::male()->get();
 return $students;
