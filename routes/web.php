@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Students;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ProductsController;
 Route::get('/', function () {
@@ -25,3 +26,4 @@ Route::get("o",[StudentsController::class,'old']);
 Route::get("showDeletedData",[StudentsController::class,'showDeletedData']);
 Route::get("restoreData",[StudentsController::class,'restoreData']);
 Route::get("new",[StudentsController::class,'putData']);
+Route::get("search",[SearchController::class,'search']);
