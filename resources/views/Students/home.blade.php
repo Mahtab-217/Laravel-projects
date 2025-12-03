@@ -80,7 +80,17 @@ td{
         @endforeach
     </table>
     <div>
-        {{ $student->appens(request()->query())->links() }}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+
+        </tr>
+
+        {{-- {{ $student->appends(request()->query())->links() }} --}}
     </div>
     </div>
 </body>
