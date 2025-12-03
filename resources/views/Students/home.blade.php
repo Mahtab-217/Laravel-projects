@@ -68,29 +68,20 @@ td{
             <th>gender</th>
             <th>score</th>
         </tr>
-        @foreach ($student as $student )
+        @foreach ($student as $st )
             <tr>
-                <td>{{$student->id}}</td>
-                <td>{{$student->name}}</td>
-                <td>{{$student->lastName}}</td>
-                <td>{{$student->age}}</td>
-                <td>{{$student->gender}}</td>
-                <td>{{$student->score}}</td>
+                <td>{{$st->id}}</td>
+                <td>{{$st->name}}</td>
+                <td>{{$st->lastName}}</td>
+                <td>{{$st->age}}</td>
+                <td>{{$st->gender}}</td>
+                <td>{{$st->score}}</td>
             </tr>
         @endforeach
     </table>
     <div>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-
-        </tr>
-
-        {{-- {{ $student->appends(request()->query())->links() }} --}}
+                 
+        {{ $student->links() }}
     </div>
     </div>
 </body>
