@@ -55,4 +55,7 @@ return $students;
             Students::withTrashed()->findorFail(1)->restore();
             return "Item was restored";
       }
+      public function fetchStudent(){
+      return view('Students.home');
+      }
 }

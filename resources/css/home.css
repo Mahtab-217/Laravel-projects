@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div.search{
+    max-width: 960px;
+    margin: 12px auto;
+    width: 100%;
+}
+div.search> form{
+    display: flex;
+    padding: 12px;
+    max-width: 3xl;
+}
+input{
+padding: 9px 121ox;
+width:50px ;
+}
+button{
+    background-color: blue;
+    padding: 12px 20px;
+    color: white;
+}

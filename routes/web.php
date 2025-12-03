@@ -26,4 +26,6 @@ Route::get("o",[StudentsController::class,'old']);
 Route::get("showDeletedData",[StudentsController::class,'showDeletedData']);
 Route::get("restoreData",[StudentsController::class,'restoreData']);
 Route::get("new",[StudentsController::class,'putData']);
-Route::get("search",[SearchController::class,'search']);
+Route::prefix('student')->controller(StudentsController::class)->group(function(){
+Route::get('/','fetchStudent');
+});
