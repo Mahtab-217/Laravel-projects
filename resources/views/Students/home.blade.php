@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-     <link rel="stylesheet" href="../css/home.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     *{
@@ -24,10 +24,10 @@ div.search> form{
     max-width: 3xl;
 }
 input{
-padding: 9px 120px;
+padding: 5px 150px;
 border: 2px solid black;
 border-radius: 4px;
-width:50px ;
+width:400px ;
 }
 button{
     background-color: blue;
@@ -48,10 +48,14 @@ th{
     border: 2px solid black;
 
 }
+td{
+    border: 1px solid black;
+    padding: 20px auto;
+}
 </style>
 <body>
     <div class="search">
-    <form action="">
+    <form action={{ URL('student') }} method="GET">
         <input type="text" name="search" id="search" placeholder="serch something">
         <button type="submit">Search</button>
     </form>
@@ -64,7 +68,20 @@ th{
             <th>gender</th>
             <th>score</th>
         </tr>
+        @foreach ($student as $student )
+            <tr>
+                <td>{{$student->id}}</td>
+                <td>{{$student->name}}</td>
+                <td>{{$student->lastName}}</td>
+                <td>{{$student->age}}</td>
+                <td>{{$student->gender}}</td>
+                <td>{{$student->score}}</td>
+            </tr>
+        @endforeach
     </table>
+    <div>
+        {{ $student->appens(request()->query())->links() }}
+    </div>
     </div>
 </body>
 </html>

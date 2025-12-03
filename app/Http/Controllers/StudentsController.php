@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Students;
 use Illuminate\Http\Request;
 
+
 class StudentsController extends Controller
 {
     //
@@ -55,7 +56,14 @@ return $students;
             Students::withTrashed()->findorFail(1)->restore();
             return "Item was restored";
       }
-      public function fetchStudent(){
-      return view('Students.home');
+      public function fetchStudent(Request $request){
+            $student=Students::when($request->search, function($query) use($request){
+                  $query->whereany([
+                  "name",
+                  "lastName",
+
+                  ],'LIKE','%'.$request->search.'%');
+            })->paginate(15);
+                  return view('Students.home', compact('student'));
       }
 }
