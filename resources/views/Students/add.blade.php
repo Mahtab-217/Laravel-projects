@@ -10,9 +10,19 @@
 <body>
     <div class="max-w-6xl w-full mx-auto my-12"></div>
     <div class="border w-full">
-        <h1>Add Students</h1>
-        <form action="" method="POST">
-            <input type="text" name="name" placeholder="Enter your name" class="py-3 w-full focus:outline-0 border rounded-md">
+        <h1 class="text-center py-4 text-2xl  text-white bg-blue-600 ">Add Students</h1>
+        <form action="URL('Student/create')" class="flex flex-col gap-2 w-10/12 mx-auto my-2" method="POST">
+        @csrf
+            <input type="text" name="name" placeholder="Enter your name" class="py-2 w-full border-black focus:outline-0 border rounded-md">
+            <input type="text" name="lastname" placeholder="Enter your last name" class="py-2 border-black w-full focus:outline-0 border rounded-md">
+            <input type="number" name="score" placeholder="Enter your score" class="py-2 w-full border-black focus:outline-0 border rounded-md">
+            <input type="number" name="age" placeholder="Enter your age" class="py-2 w-full border-black focus:outline-0 border rounded-md">
+             <label>Gender</label>
+             <div class="flex flex-row">
+            male <input type="radio" name="gender" value=" m"/>
+            female <input type="radio" name="gender" value=" f"/>
+            </div>
+            <button class="py-2 bg-green-600 text-white text-center" type="submit">Save</button>
         </form>
     </div>
     

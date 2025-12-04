@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get("products",[ProductsController::class, 'index']);
-Route::get("products/add",[ProductsController::class,'add']);
+// Route::get("products/add",[ProductsController::class,'add']);
 Route::get("products/{id}", [ProductsController::class, 'show']);
 Route::get("product/update/{id}", [ProductsController::class, 'update']);
 Route::get("product/delete/{id}", [ProductsController::class, 'delete']);
@@ -28,5 +28,6 @@ Route::get("restoreData",[StudentsController::class,'restoreData']);
 Route::get("new",[StudentsController::class,'putData']);
 Route::prefix('student')->controller(StudentsController::class)->group(function(){
 Route::get('/','fetchStudent');
-});
 Route::view('add','Students.add');
+Route::post('create','create');
+});
