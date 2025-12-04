@@ -58,11 +58,7 @@ return $students;
       }
       public function fetchStudent(Request $request){
             $student=Students::when($request->search, function($query) use($request){
-                  $query->whereany([
-                  "name",
-                  "lastName",
-
-                  ],'LIKE','%'.$request->search.'%');
+                  $query->where("name",'LIKE','%'.$request->search.'%');
             })->paginate(15);
                   return view('Students.home', compact('student'));
       }

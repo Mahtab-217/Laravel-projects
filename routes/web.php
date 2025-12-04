@@ -29,3 +29,4 @@ Route::get("new",[StudentsController::class,'putData']);
 Route::prefix('student')->controller(StudentsController::class)->group(function(){
 Route::get('/','fetchStudent');
 });
+Route::view('add','Students.add');

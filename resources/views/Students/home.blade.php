@@ -81,7 +81,7 @@ td{
     </table>
     <div>
                  
-        {{ $student->appands()->request(search)->links() }}
+        {{ $student->appends(request()->query())->links() }}
     </div>
     </div>
 </body>
