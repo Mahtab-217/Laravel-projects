@@ -63,13 +63,13 @@ return $students;
                   return view('Students.home', compact('student'));
       }
       public function create(Request $request){
-            $srudent=new Students();
+            $student=new Students();
             $student->name=$request->name;
             $student->lastName=$request->lastname;
             $student->score=$request->score;
             $student->age=$request->age;
             $student->gender=$request->gender;
-            $student->save;
-            return redirect("student");
+            $student->save();
+            return redirect('/student');
       }
 }
