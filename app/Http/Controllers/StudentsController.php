@@ -72,4 +72,8 @@ return $students;
             $student->save();
             return redirect('/student');
       }
+      public function update($id){
+       $stu= Students::findorFail($id);
+       return view('Students.update', compact('stu'));
+      }
 }

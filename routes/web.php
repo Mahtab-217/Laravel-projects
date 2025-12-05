@@ -30,4 +30,5 @@ Route::prefix('student')->controller(StudentsController::class)->group(function(
 Route::get('/','fetchStudent');
 Route::view('add','Students.add');
 Route::post('create','create');
+Route::get("update/{id}",'update');
 });

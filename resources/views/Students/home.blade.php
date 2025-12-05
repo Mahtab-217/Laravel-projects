@@ -67,6 +67,7 @@ td{
             <th>age</th>
             <th>gender</th>
             <th>score</th>
+            <th>Delete or Update</th>
         </tr>
         @foreach ($student as $st )
             <tr>
@@ -76,6 +77,8 @@ td{
                 <td>{{$st->age}}</td>
                 <td>{{$st->gender}}</td>
                 <td>{{$st->score}}</td>
+                <td><a href="{{ URL('student/update/').'/'.$st->id }}"> Update</a></td>
+                <td><a href=""></a></td>
             </tr>
         @endforeach
     </table>
