@@ -76,4 +76,18 @@ return $students;
        $stu= Students::findorFail($id);
        return view('Students.update', compact('stu'));
       }
+      public function Edit(Request $request, $id){
+    $student=Students::findOrFail($id);
+    $student->name= $request->name;
+    $student->lastName=$request->lastname;
+    $student->score=$request->score;
+    $student->age=$request->age;
+    $student->gender=$request->gender;
+    $student->update();
+    return redirect("student");
+      }
+      public function Destroy(Request $request,$id){
+            Students::findOrFail($id)->delete();
+          return redirect("student");
+      }
 }

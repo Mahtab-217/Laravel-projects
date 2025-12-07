@@ -52,6 +52,7 @@ td{
     border: 1px solid black;
     padding: 20px auto;
 }
+
 </style>
 <body>
     <div class="search">
@@ -65,9 +66,9 @@ td{
             <th>Name</th>
             <th>lastName</th>
             <th>age</th>
-            <th>gender</th>
+            <th>gender</th> 
             <th>score</th>
-            <th>Delete or Update</th>
+            <th class="colspan-2">Delete or Update</th>
         </tr>
         @foreach ($student as $st )
             <tr>
@@ -78,7 +79,13 @@ td{
                 <td>{{$st->gender}}</td>
                 <td>{{$st->score}}</td>
                 <td><a href="{{ URL('student/update/').'/'.$st->id }}"> Update</a></td>
-                <td><a href=""></a></td>
+                <td>
+                    <form action="{{ URL('student/delete',$st->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this student?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">delete</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>
