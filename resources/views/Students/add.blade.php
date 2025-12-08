@@ -10,8 +10,8 @@
 <body>
     <div class="max-w-6xl w-full mx-auto my-12"></div>
     @if ($errors->any())
-      <ol class="list-decimal bg-red-500 p-2 text-gray-100 list-inside">
-        @foreach ($errors as $error )
+      <ol class="list-disc bg-red-500 p-2 text-gray-100 list-inside">
+        @foreach ($errors->all() as $error )
           <li>{{$error}}</li>
         @endforeach
       </ol>
