@@ -62,13 +62,17 @@ return $students;
                   return view('Students.home', compact('student'));
       }
       public function create(formAddRequest $request){
-      
+            $imagepath=null;
+            if ($request->hasFile('image')){
+                  $imagepath = $request->file('image')->store('photos','public');
+            };
             $student=new Students();
             $student->name=$request->name;
             $student->lastName=$request->lastname;
             $student->score=$request->score;
             $student->age=$request->age;
             $student->gender=$request->gender;
+            $student->image=$imagepath;
             $student->save();
             return redirect('/student');
       }
