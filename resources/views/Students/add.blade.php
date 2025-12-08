@@ -9,6 +9,13 @@
 </head>
 <body>
     <div class="max-w-6xl w-full mx-auto my-12"></div>
+    @if ($errors->any())
+      <ol class="list-decimal bg-red-500 p-2 text-gray-100 list-inside">
+        @foreach ($errors as $error )
+          <li>{{$error}}</li>
+        @endforeach
+      </ol>
+    @endif
     <div class="border w-full">
         <h1 class="text-center py-4 text-2xl  text-white bg-blue-600 ">Add Students</h1>
         <form action="{{ url('student/create') }}" class="flex flex-col gap-2 w-10/12 mx-auto my-2" method="POST">

@@ -63,6 +63,20 @@ return $students;
                   return view('Students.home', compact('student'));
       }
       public function create(Request $request){
+            $request->validate([
+                  "name"=> "required|min:3|max:25",
+                  "lastname"=> "required|min:5|max:30",
+                  "score"=> "required|numeric|min:0|max:100",
+                   "age"=> "required|integer|min:7|max|50",
+                   "gender"=> "required|in:m,f",
+            ],
+                 [
+                  "name.required" =>"you are out of your mind",
+                  "lastname.required" =>"You are a bit crazy",
+                  "score.required" =>"you should see a doctor",
+
+                 ],
+      );
             $student=new Students();
             $student->name=$request->name;
             $student->lastName=$request->lastname;
