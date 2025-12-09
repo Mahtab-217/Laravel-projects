@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Students;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Requests\formAddRequest;
 class StudentsController extends Controller
@@ -72,7 +73,7 @@ return $students;
             $student->score=$request->score;
             $student->age=$request->age;
             $student->gender=$request->gender;
-            $student->image=$imagepath;
+            $student->image = $imagepath;
             $student->save();
             return redirect('/student');
       }
@@ -91,7 +92,11 @@ return $students;
     return redirect("student");
       }
       public function Destroy(Request $request,$id){
-            Students::findOrFail($id)->delete();
+            $student=Students::findOrFail($id);
+            if($student->image){
+                  Storage::disk('public')->delete($student->image);
+            }
+            $student->delete();
           return redirect("student");
       }
 }
