@@ -29,6 +29,7 @@ class formAddRequest extends FormRequest
                    "age"=> "required|integer|min:7|max:50",
                    "gender"=> "required|in:m,f",
                    "image"=>"nullable|image|mimes:jpg,png,jpeg,gif|max:4096",
+                   "song"=>"nullable|audio"
         ];
     }
     public function messages(){

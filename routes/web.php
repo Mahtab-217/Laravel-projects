@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Students;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\MusicController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ProductsController;
@@ -33,4 +34,8 @@ Route::post('create','create');
 Route::get("update/{id}",'update');
 Route::put('edit/{id}', 'Edit');
 Route::delete('delete/{id}','Destroy');
+});
+Route::prefix('songs')->controller(MusicController::class)->groupe(function(){
+Route::view('music',[MusicController::class,'add']);
+Route::get("addMusic",[MusicController::class, '']);
 });
