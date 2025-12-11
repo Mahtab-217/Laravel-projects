@@ -1,23 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Songs;
 use Illuminate\Http\Request;
 
 class SongsController extends Controller
 {
     //
     public function Create(Request $request){
-        $song= new Songs();
+        $song = new Songs();
         $request->validate([
             "singer"=>"required|string|max:30",
-            "song"=>"nullable|audio|mimes:mp3,wav|max:12288",
+            "song"=>"nullable|file|mimes:mp3,wav|max:12288",
         ]);
         $filePath=null;
         if($request->hasFile('song')){
        $filePath=$request->file('song')->store('songs','public');
        $song->singer=$request->singer;
-       $song->song=$request->song;
+       $song->song=$filePath;
        $song->save();
        return redirect('/');
 

@@ -10,7 +10,7 @@
 <body>
     <form action="{{ URL('songs/insert') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" class="py-2 px-4" placeholder="Enter the singer's name">
+        <input type="text" class="py-2 px-4" name="singer" placeholder="Enter the singer's name">
         <input type="file" accept="audio/*" name="song" class="py-2 px-4 border" placeholder="Enter the song">
         <button type="submit">Save</button>
     </form>
