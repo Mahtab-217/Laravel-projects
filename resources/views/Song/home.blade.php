@@ -12,9 +12,13 @@
     <h1 class="text-5xl font-bold">All Songs</h1>
     <div>
         @foreach ($songs as $song )
-        <div>
-            <h1></h1>
-            <audio src="{{ asset() }}"></audio>
+        <div class="w-full border rounded-2xl flex flex-col gap-4 items-center">
+            <h1>{{$song->singer}}</h1>
+            @if ($song->song)
+                   <audio src="{{ asset('storage'.$song->song) }}" controls ></audio>
+                   <a href="{{ asset('storage'.$song->song)}}" download="">Download</a> 
+            @endif
+         
             </div>
         @endforeach
     </div>

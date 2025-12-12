@@ -19,7 +19,7 @@ class SongsController extends Controller
        $song->singer=$request->singer;
        $song->song=$filePath;
        $song->save();
-       return redirect('/');
+       return redirect('songs');
 
         }
       
