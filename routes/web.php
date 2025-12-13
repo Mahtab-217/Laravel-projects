@@ -39,5 +39,6 @@ Route::prefix('songs')->controller(SongsController::class)->group(function(){
 Route::view('/add','Song.Insert');
 Route::get('/','index');
 Route::post('insert','Create');
+Route::delete('delete/{id}','Destroy');
 });
 

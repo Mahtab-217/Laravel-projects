@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Songs;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class SongsController extends Controller
 {
     //
@@ -24,6 +24,14 @@ class SongsController extends Controller
         }
       
     }
+        public function Destroy(Request $request,$id){
+            $song=Songs::findOrFail($id);
+            if($song->song){
+                  Storage::disk('public')->delete($song->song);
+            }
+            $song->delete();
+          return redirect("songs");
+      }
       public function index(){
            $songs = Songs::all();
          return view('Song.home',compact('songs'));
