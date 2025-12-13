@@ -18,11 +18,11 @@
             @if ($song->song)
                    <audio src="{{ asset('storage/'.$song->song) }}" controls class="bg-black/80 rounded-md"></audio>
                    <div class="flex flex-row gap-5">
-                   <a href="{{ asset('storage/'. $song->song)}}" download="" class="text-green-800 font-bold">Download</a> 
+                   <a href="{{ asset('storage/'. $song->song)}}" download="" class="text-green-800 font-bold">DOWNLOAD</a> 
                      <form action="{{ URL('songs/delete',$song->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this song?')">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">delete</button>
+                    <button class="text-red-800 font-bold " type="submit">DELETE</button>
                     </form>
                    </div>
             @endif
