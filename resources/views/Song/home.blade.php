@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="w-full max-w-4xl mx-auto"></div>
-    <h1 class="text-5xl font-bold text-center text-blue-900 mt-5">First part of the listening for ILETS exam</h1>
+    <h1 class="text-5xl font-bold text-center text-blue-900 mt-5 bg-[url('/photos/bg2.avif')]">First part of the listening for ILETS exam</h1>
    
     <div>
         @foreach ($songs as $song )
