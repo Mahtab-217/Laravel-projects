@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="w-full max-w-4xl mx-auto"></div>
-    <h1 class="text-5xl font-bold text-center text-blue-900">First part of the listening for ILETS exam</h1>
+    <h1 class="text-5xl font-bold text-center text-blue-900 mt-5">First part of the listening for ILETS exam</h1>
    
     <div>
         @foreach ($songs as $song )
         <div class="w-full border rounded-2xl flex flex-col gap-3 items-center">
-            <h1 class="text-xl text-blue-800">{{$song->singer}}</h1>
+            <h1 class="text-xl text-blue-900">{{$song->singer}}</h1>
             @if ($song->song)
-                   <audio src="{{ asset('storage/'.$song->song) }}" controls class="bg-black/80 rounded-md"></audio>
+                   <audio src="{{ asset('storage/'.$song->song) }}" controls class="bg-black/75 rounded-md"></audio>
                    <div class="flex flex-row gap-5">
                    <a href="{{ asset('storage/'. $song->song)}}" download="" class="text-green-800 font-bold">DOWNLOAD</a> 
                      <form action="{{ URL('songs/delete',$song->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this song?')">
