@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastName');
             $table->string('email');
-            $table->integer('dob');
-            $table->integer('score');
+            $table->date('dob');
             $table->enum("gender",["m","f"])->default("m");
             $table->string('image');
             $table->integer('user_id');
