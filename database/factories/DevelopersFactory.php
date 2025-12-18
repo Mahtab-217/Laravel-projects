@@ -18,6 +18,9 @@ class DevelopersFactory extends Factory
     {
         return [
             //
+            "name"=>$this->faker->name(),
+            "phone"=>$this->faker->phoneNumber(),
+            "lastName"=>$this->faker->lastName(),
         ];
     }
 }
