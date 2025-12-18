@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grade', function (Blueprint $table) {
+        Schema::create('developers', function (Blueprint $table) {
             $table->id();
-            $table->integer('grade');
-            $table->foreignId('sub_id')->constrained("subject");
-            $table->foreignId('st_id')->constrained("student");
+            $table->string('name');
+            $table->string('phone');
+            $table->string('lastName');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grade');
+        Schema::dropIfExists('developers');
     }
 };
