@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\DevelopersController;
 use App\Http\Controllers\Students;
 use App\Http\Controllers\SongsController;
 use App\Http\Controllers\StudentsController;
@@ -41,4 +43,5 @@ Route::get('/','index');
 Route::post('insert','Create');
 Route::delete('delete/{id}','Destroy');
 });
+Route::get('developer', [DevelopersController::class, 'create' ]);
 
